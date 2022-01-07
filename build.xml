@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="hello_jdk7" basedir="." default="jar">
+
+    <target name="clean" description="Delete all generated files">
+        <delete dir="classes_for_ant"/>
+        <delete file="hello_java.jar"/>
+    </target>
+
+    <target name="compile" description="Compiles the Task">
+        <mkdir dir="classes_for_ant" />
+        <javac srcdir="src" destdir="classes_for_ant"/>
+    </target>
+
+    <target name="jar" description="JARs the Task">
+        <jar destfile="hello_java.jar" basedir="classes_for_ant">
+            <manifest>
+                <attribute name="Main-Class" value="com.zc2tech.Main"/>
+            </manifest>
+        </jar>
+    </target>
+
+</project>
