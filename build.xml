@@ -11,7 +11,7 @@
         <javac srcdir="src" destdir="classes_for_ant"/>
     </target>
 
-    <target name="jar" description="JARs the Task">
+    <target name="jar" description="JARs the Task" depends="compile">
         <jar destfile="hello_java.jar" basedir="classes_for_ant">
             <manifest>
                 <attribute name="Main-Class" value="com.zc2tech.Main"/>
